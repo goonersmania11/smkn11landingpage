@@ -18,3 +18,13 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+// Grup rute khusus Admin
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+
+    // URL: /admin/dashboard
+    Route::get('/dashboard', function () {
+        return 'Halo Admin! Ini adalah halaman Dashboard Admin sementara.';
+    })->name('dashboard');
+
+    // Nanti rute untuk kelola jurusan, guru, berita, dll masukkan di dalam grup ini.
+});
