@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>@yield('title', 'SMKN 11 - Sekolah Menengah Kejuruan Negeri 11')</title>
+  <title>{{ $profile->school_name ?? 'SMKN 11 - Sekolah Menengah Kejuruan Negeri 11' }}</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,12 +87,12 @@
             <li class="location text-white text-capitalize d-flex align-items-center me-4" style="font-size: 15px;">
               <svg class="text-white me-1" width="18" height="18">
                 <use xlink:href="#location"></use>
-              </svg> Pangkat, Kec. Jayanti, Kabupaten Tangerang, Banten 15610
+              </svg> {{ $profile->address ?? 'Pangkat, Kec. Jayanti, Kabupaten Tangerang, Banten 15610' }}
             </li>
             <li class="phone text-white text-capitalize d-flex align-items-center me-4" style="font-size: 15px;">
               <svg class="text-white me-1" width="18" height="18">
                 <use xlink:href="#phone"></use>
-              </svg> 666 333 9999
+              </svg> {{ $profile->phone ?? '08123456789' }}
             </li>
           </ul>
           <ul class="social-links d-flex flex-wrap list-unstyled m-0">
@@ -288,13 +288,12 @@
 
         <div class="col-md-6 mt-5">
           <div class="bg-primary p-5">
-            <h4 class="text-white mt-3">Welcome</h4>
-            <p class="text-white my-4">Welcome to our school, where excellence meets innovation. Our commitment to
-              fostering academic achievement, personal growth, and community engagement sets us apart. Explore a
-              transformative educational journey that prepares students for a future of limitless possibilities. From advanced academic
-              courses to a rich tapestry of extracurricular activities, School provides a holistic education that goes
-              beyond the classroom.</p>
-            <a href="#" class="text-white text-uppercase mb-3 fs-6 text-decoration-underline">Read more</a>
+            <h4 class="text-white mt-3">{{ $profile->school_name ?? 'SMKN 11' }}</h4>
+            <p class="text-white my-4">{{ $profile->welcome_message ?? 'Selamat datang di SMKN 11, sekolah menengah kejuruan negeri yang berkomitmen untuk memberikan pendidikan berkualitas dan mempersiapkan siswa menghadapi masa depan.' }}</p>
+            @if($profile->description)
+              <p class="text-white my-4">{{ $profile->description }}</p>
+            @endif
+            <a href="#courses" class="text-white text-uppercase mb-3 fs-6 text-decoration-underline">Lihat Program</a>
           </div>
         </div>
 
@@ -337,16 +336,17 @@
 
         <div class="col-md-4 mt-5">
 
-          <p class="fs-2 lh-base">At our School, we aim to empower students with the skills, knowledge, and values
-            needed for success in a global context.</p>
+          <p class="fs-2 lh-base">{{ $profile->principal_message ?? 'Di SMKN 11, kami bertujuan untuk memberdayakan siswa dengan keterampilan, pengetahuan, dan nilai-nilai yang dibutuhkan untuk sukses dalam konteks global.' }}</p>
           <div class="d-flex justify-content-between">
             <div class="mt-3">
-              <p class="fw-bold m-0">Josheph Ken</p>
-              <p>Principal</p>
+              <p class="fw-bold m-0">{{ $profile->principal_name ?? 'Kepala Sekolah' }}</p>
+              <p>Kepala Sekolah</p>
             </div>
+            @if($profile->principal_photo)
             <div>
-              <img src="{{ asset('glory-html-website-template/images/signature.png') }}" alt="img" class="img-fluid">
+              <img src="{{ asset('storage/' . $profile->principal_photo) }}" alt="Foto Kepala Sekolah" class="img-fluid rounded-circle" style="max-width: 80px;">
             </div>
+            @endif
           </div>
         </div>
 
@@ -805,13 +805,13 @@
             <h6 class="text-white widget-title pb-2 fw-semibold">Kontak</h6>
             <ul class="menu-list d-flex flex-column list-unstyled">
               <li class="pb-2 text-white">
-                <a href="#" class="fw-light">Jl. Contoh No. 123</a>
+                <a href="#" class="fw-light">{{ $profile->address ?? 'Jl. Contoh No. 123' }}</a>
               </li>
               <li class="pb-2 text-white">
-                <a href="#" class="fw-light">Telp: (021) 123456</a>
+                <a href="#" class="fw-light">Telp: {{ $profile->phone ?? '(021) 123456' }}</a>
               </li>
               <li class="pb-2 text-white">
-                <a href="#" class="fw-light">Email: info@smkn11.sch.id</a>
+                <a href="#" class="fw-light">Email: {{ $profile->email ?? 'info@smkn11.sch.id' }}</a>
               </li>
             </ul>
           </div>

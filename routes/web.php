@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Profile;
+
 // Halaman utama (Publik/Landing Page)
 Route::get('/', function () {
-    return view('welcome');
+    $profile = Profile::first();
+    return view('welcome', compact('profile'));
 })->name('home');
 
 // Dashboard untuk User biasa (bawaan Breeze)
@@ -27,6 +31,9 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+    
+    // CRUD Profil Sekolah
+    Route::resource('profiles', AdminProfileController::class);
     
 });
 
