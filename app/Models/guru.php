@@ -9,7 +9,7 @@ class Guru extends Model
     protected $table = 'guru';
 
     protected $fillable = [
-        'nama',
+        'nama_guru',
         'nip',
         'jabatan',
         'foto'
