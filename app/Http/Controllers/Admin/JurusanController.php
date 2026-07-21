@@ -42,7 +42,7 @@ class JurusanController extends Controller
         $gambar = $request->file('gambar')->store('jurusan', 'public');
     }
     Jurusan::create([
-        'nama' => $request->nama,
+        'nama_jurusan' => $request->nama,
         'slug' => Str::slug($request->nama),
         'deskripsi' => $request->deskripsi,
         'gambar' => $gambar,
