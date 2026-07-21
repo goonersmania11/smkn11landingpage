@@ -4,7 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ekstrakurikuler extends Model
+class Ekstrakurikuler extends Model
 {
-    //
+    protected $table = 'ekstrakurikuler';
+
+    protected $fillable = [
+        'nama_ekstrakurikuler',
+        'slug',
+        'deskripsi',
+        'gambar',
+    ];
 }
