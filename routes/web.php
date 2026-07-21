@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 // Halaman utama (Publik/Landing Page)
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 // Dashboard untuk User biasa (bawaan Breeze)
 Route::get('/dashboard', function () {
