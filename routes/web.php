@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\EkstrakurikulerController;
 Route::get('/', function () {
     return view('welcome');
 });
+//route master-data
 Route::resource('jurusan', JurusanController::class);
 Route::resource('guru', GuruController::class);
 Route::resource('ekstrakurikuler', EkstrakurikulerController::class);
