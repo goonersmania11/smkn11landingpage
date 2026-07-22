@@ -2,19 +2,20 @@
 <html>
 
 <head>
-  <title>{{ $profile->school_name ?? 'SMKN 11 - Sekolah Menengah Kejuruan Negeri 11' }}</title>
+  <title>Glory - School Bootstrap 5 HTML Website Template</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="description" content="SMKN 11 - Sekolah Menengah Kejuruan Negeri 11">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
 
-  <link rel="stylesheet" type="text/css" href="{{ asset('glory-html-website-template/css/bootstrap.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('glory-html-website-template/css/vendor.css') }}">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('glory-html-website-template/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,12 +88,12 @@
             <li class="location text-white text-capitalize d-flex align-items-center me-4" style="font-size: 15px;">
               <svg class="text-white me-1" width="18" height="18">
                 <use xlink:href="#location"></use>
-              </svg> {{ $profile->address ?? 'Pangkat, Kec. Jayanti, Kabupaten Tangerang, Banten 15610' }}
+              </svg> State Road 54 Trinity, Florida
             </li>
             <li class="phone text-white text-capitalize d-flex align-items-center me-4" style="font-size: 15px;">
               <svg class="text-white me-1" width="18" height="18">
                 <use xlink:href="#phone"></use>
-              </svg> {{ $profile->phone ?? '08123456789' }}
+              </svg> 666 333 9999
             </li>
           </ul>
           <ul class="social-links d-flex flex-wrap list-unstyled m-0">
@@ -137,8 +138,8 @@
     </nav>
     <nav id="primary-header" class="navbar second-header navbar-expand-lg py-2 px-xl-5">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('home') }}">
-          <img src="{{ asset('glory-html-website-template/images/main-logo.png') }}" class="logo img-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/main-logo.png" class="logo img-fluid">
         </a>
         <button class="navbar-toggler border-0 d-flex d-lg-none order-3 p-2 shadow-none" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false">
@@ -154,32 +155,58 @@
           <div class="offcanvas-body align-items-center justify-content-end">
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item px-4">
-                <a class="nav-link active p-0" aria-current="page" href="{{ route('home') }}">Home</a>
+                <a class="nav-link active p-0" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item px-4">
-                <a class="nav-link p-0" href="#about">About Us</a>
+                <a class="nav-link p-0" href="about.html">About Us</a>
               </li>
               <li class="nav-item px-4">
-                <a class="nav-link p-0" href="#courses">Program Keahlian</a>
+                <a class="nav-link p-0" href="services.html">Admission</a>
               </li>
               <li class="nav-item px-4">
-                <a class="nav-link p-0" href="#teacher">Guru & Staff</a>
+                <a class="nav-link p-0" href="blog.html">Our Blog</a>
               </li>
               <li class="nav-item px-4">
-                <a class="nav-link p-0" href="#blogs">Berita</a>
+                <a class="nav-link p-0" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item px-4 dropdown">
+                <a class="nav-link p-0 dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                  aria-expanded="false">Academics</a>
+                <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 shadow rounded-0">
+                  <li class="py-1"><a href="#" class="dropdown-item text-uppercase">Academics-1
+                    </a></li>
+                  <li class="py-1"><a href="#" class="dropdown-item text-uppercase">Academics-2
+                    </a></li>
+                  <li class="py-1"><a href="#" class="dropdown-item text-uppercase">Academics-3
+                    </a></li>
+                  <li class="py-1"><a href="#" class="dropdown-item text-uppercase">Academics-4
+                    </a></li>
+
+                </ul>
               </li>
               <li class="nav-item px-4">
-                <a class="nav-link p-0" href="#footer">Kontak</a>
+                <a class="nav-link p-0 fw-bold text-uppercase text-decoration-underline"
+                  href="https://templatesjungle.gumroad.com/l/glory-bootstrap-html-website-template-for-school"
+                  target="_blank">Get Pro</a>
               </li>
-              @auth
-                <li class="nav-item px-4">
-                  <a class="nav-link p-0 fw-bold text-uppercase" href="{{ url('/dashboard') }}">Dashboard</a>
-                </li>
-              @else
-                <li class="nav-item px-4">
-                  <a class="nav-link p-0 fw-bold text-uppercase" href="{{ route('login') }}">Login</a>
-                </li>
-              @endauth
+              <li class="nav-item search-dropdown ms-3 ms-lg-5 dropdown">
+                <a class="nav-link p-0 search dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                  aria-expanded="false">
+                  <svg class="search" width="24" height="24">
+                    <use xlink:href="#search"></use>
+                  </svg>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 p-3 shadow">
+                  <li class="position-relative d-flex align-items-center p-0">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary position-absolute end-0" type="submit">
+                      <svg class="search" width="24" height="24">
+                        <use xlink:href="#search"></use>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>
@@ -191,24 +218,24 @@
     <div class="swiper slider position-relative">
       <div class="swiper-wrapper">
         <div class="swiper-slide d-flex"
-          style="background-image: url({{ asset('glory-html-website-template/images/slider-image.jpg') }}); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center; height: 90vh;">
+          style="background-image: url(images/slider-image.jpg); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center; height: 90vh;">
           <div class="banner-content text-center m-auto">
-            <h2 class="text-white display-1 fw-bolder lh-1">SMKN 11</h2>
-            <p class="fs-4 text-white text-capitalize">Membangun Masa Depan Bersama</p>
+            <h2 class="text-white display-1 fw-bolder lh-1">Unlock Your Future Success</h2>
+            <p class="fs-4 text-white text-capitalize">High School Redefined for Success!</p>
           </div>
         </div>
         <div class="swiper-slide d-flex"
-          style="background-image: url({{ asset('glory-html-website-template/images/slider-image1.jpg') }}); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center; height: 90vh;">
+          style="background-image: url(images/slider-image1.jpg); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center; height: 90vh;">
           <div class="banner-content text-center m-auto">
-            <h2 class="text-white display-1 fw-bolder lh-1">SMKN 11</h2>
-            <p class="fs-4 text-white text-capitalize">Sekolah Menengah Kejuruan Negeri 11</p>
+            <h2 class="text-white display-1 fw-bolder lh-1">Unlock Your Future Success</h2>
+            <p class="fs-4 text-white text-capitalize">High School Redefined for Success!</p>
           </div>
         </div>
         <div class="swiper-slide d-flex"
-          style="background-image: url({{ asset('glory-html-website-template/images/slider-image2.jpg') }}); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center; height: 90vh;">
+          style="background-image: url(images/slider-image2.jpg); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center; height: 90vh;">
           <div class="banner-content text-center m-auto">
-            <h2 class="text-white display-1 fw-bolder lh-1">SMKN 11</h2>
-            <p class="fs-4 text-white text-capitalize">Siap Bersaing di Dunia Kerja</p>
+            <h2 class="text-white display-1 fw-bolder lh-1">Unlock Your Future Success</h2>
+            <p class="fs-4 text-white text-capitalize">High School Redefined for Success!</p>
           </div>
         </div>
 
@@ -232,15 +259,15 @@
 
       <div class="row g-lg-0 mt-5 mt-lg-0">
         <div class="col-md-4 text-center">
-          <img src="{{ asset('glory-html-website-template/images/feature1.jpg') }}" class="img-fluid" alt="img">
+          <img src="images/feature1.jpg" class="img-fluid" alt="img">
           <a href="#"><p class="text-white py-3 m-0 bg-primary">Career-Oriented Curriculum</p></a>
         </div>
         <div class="col-md-4 text-center">
-          <img src="{{ asset('glory-html-website-template/images/feature2.jpg') }}" class="img-fluid" alt="img">
+          <img src="images/feature2.jpg" class="img-fluid" alt="img">
           <a href="#"><p class="text-white py-3 m-0 bg-tertiary">Skills for Professional Success</p></a>
         </div>
         <div class="col-md-4 text-center">
-          <img src="{{ asset('glory-html-website-template/images/feature3.jpg') }}" class="img-fluid" alt="img">
+          <img src="images/feature3.jpg" class="img-fluid" alt="img">
           <a href="#"><p class="text-white py-3 m-0 bg-secondary">Supportive Environment</p></a>
         </div>
       </div>
@@ -288,12 +315,13 @@
 
         <div class="col-md-6 mt-5">
           <div class="bg-primary p-5">
-            <h4 class="text-white mt-3">{{ $profile->school_name ?? 'SMKN 11' }}</h4>
-            <p class="text-white my-4">{{ $profile->welcome_message ?? 'Selamat datang di SMKN 11, sekolah menengah kejuruan negeri yang berkomitmen untuk memberikan pendidikan berkualitas dan mempersiapkan siswa menghadapi masa depan.' }}</p>
-            @if($profile->description)
-              <p class="text-white my-4">{{ $profile->description }}</p>
-            @endif
-            <a href="#courses" class="text-white text-uppercase mb-3 fs-6 text-decoration-underline">Lihat Program</a>
+            <h4 class="text-white mt-3">Welcome</h4>
+            <p class="text-white my-4">Welcome to our school, where excellence meets innovation. Our commitment to
+              fostering academic achievement, personal growth, and community engagement sets us apart. Explore a
+              transformative educational journey that prepares students for a future of limitless possibilities. From advanced academic
+              courses to a rich tapestry of extracurricular activities, School provides a holistic education that goes
+              beyond the classroom.</p>
+            <a href="#" class="text-white text-uppercase mb-3 fs-6 text-decoration-underline">Read more</a>
           </div>
         </div>
 
@@ -305,15 +333,15 @@
   
         <div class="row g-lg-0 mt-4">
           <div class="col-md-4 text-center">
-            <img src="{{ asset('glory-html-website-template/images/course1.jpg') }}" class="img-fluid" alt="img">
+            <img src="images/course1.jpg" class="img-fluid" alt="img">
             <a href="#"><p class="text-white py-3 m-0 bg-primary">Health and Sciences</p></a>
           </div>
           <div class="col-md-4 text-center">
-            <img src="{{ asset('glory-html-website-template/images/course2.jpg') }}" class="img-fluid" alt="img">
+            <img src="images/course2.jpg" class="img-fluid" alt="img">
             <a href="#"><p class="text-white py-3 m-0 bg-tertiary">Business Academics</p></a>
           </div>
           <div class="col-md-4 text-center">
-            <img src="{{ asset('glory-html-website-template/images/course3.jpg') }}" class="img-fluid" alt="img">
+            <img src="images/course3.jpg" class="img-fluid" alt="img">
             <a href="#"><p class="text-white py-3 m-0 bg-secondary">World History</p></a>
           </div>
         </div>
@@ -329,30 +357,29 @@
           <div class="imageblock me-4">
             <a type="button" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/W_tIumKa8VY"
               data-bs-target="#myModal" class="play-btn position-relative">
-              <img class="img-fluid" src="{{ asset('glory-html-website-template/images/founder.png') }}" alt="img">
+              <img class="img-fluid" src="images/founder.png" alt="img">
             </a>
           </div>
         </div>
 
         <div class="col-md-4 mt-5">
 
-          <p class="fs-2 lh-base">{{ $profile->principal_message ?? 'Di SMKN 11, kami bertujuan untuk memberdayakan siswa dengan keterampilan, pengetahuan, dan nilai-nilai yang dibutuhkan untuk sukses dalam konteks global.' }}</p>
+          <p class="fs-2 lh-base">At our School, we aim to empower students with the skills, knowledge, and values
+            needed for success in a global context.</p>
           <div class="d-flex justify-content-between">
             <div class="mt-3">
-              <p class="fw-bold m-0">{{ $profile->principal_name ?? 'Kepala Sekolah' }}</p>
-              <p>Kepala Sekolah</p>
+              <p class="fw-bold m-0">Josheph Ken</p>
+              <p>Principal</p>
             </div>
-            @if($profile->principal_photo)
             <div>
-              <img src="{{ asset('storage/' . $profile->principal_photo) }}" alt="Foto Kepala Sekolah" class="img-fluid rounded-circle" style="max-width: 80px;">
+              <img src="images/signature.png" alt="img" class="img-fluid">
             </div>
-            @endif
           </div>
         </div>
 
       </div>
     </div>
-    <img class="position-absolute top-50 end-0 translate-middle-y z-n1 img-fluid" src="{{ asset('glory-html-website-template/images/pattern1.png') }}" alt="img">
+    <img class="position-absolute top-50 end-0 translate-middle-y z-n1 img-fluid" src="images/pattern1.png" alt="img">
   </section>
 
   <section id="teacher" class="position-relative">
@@ -361,35 +388,35 @@
 
       <div class="row g-0 mt-4">
         <div class="col text-center">
-          <img src="{{ asset('glory-html-website-template/images/teacher5.jpg') }}" class="img-fluid" alt="img">
+          <img src="images/teacher5.jpg" class="img-fluid" alt="img">
           <div class="d-flex justify-content-between p-3 bg-primary">
             <p class="m-0 text-white">Andy R.K</p>
             <p class="m-0 fw-lighter text-white">Director</p>
           </div>
         </div>
         <div class="col text-center">
-          <img src="{{ asset('glory-html-website-template/images/teacher4.jpg') }}" class="img-fluid" alt="img">
+          <img src="images/teacher4.jpg" class="img-fluid" alt="img">
           <div class="d-flex justify-content-between p-3 bg-tertiary">
             <p class="m-0 text-white">Sarha J.L</p>
             <p class="m-0 fw-lighter text-white">Lecturer</p>
           </div>
         </div>
         <div class="col text-center">
-          <img src="{{ asset('glory-html-website-template/images/teacher3.jpg') }}" class="img-fluid" alt="img">
+          <img src="images/teacher3.jpg" class="img-fluid" alt="img">
           <div class="d-flex justify-content-between p-3 bg-primary">
             <p class="m-0 text-white">Telly H.S</p>
             <p class="m-0 fw-lighter text-white">Director</p>
           </div>
         </div>
         <div class="col text-center">
-          <img src="{{ asset('glory-html-website-template/images/teacher2.jpg') }}" class="img-fluid" alt="img">
+          <img src="images/teacher2.jpg" class="img-fluid" alt="img">
           <div class="d-flex justify-content-between p-3 bg-tertiary">
             <p class="m-0 text-white">Jack M.L</p>
             <p class="m-0 fw-lighter text-white">Lecturer</p>
           </div>
         </div>
         <div class="col text-center">
-          <img src="{{ asset('glory-html-website-template/images/teacher1.jpg') }}" class="img-fluid" alt="img">
+          <img src="images/teacher1.jpg" class="img-fluid" alt="img">
           <div class="d-flex justify-content-between p-3 bg-primary">
             <p class="m-0 text-white">Teressa D.O</p>
             <p class="m-0 fw-lighter text-white">Executive</p>
@@ -398,7 +425,7 @@
 
       </div>
     </div>
-    <img class="position-absolute top-50 start-0 translate-middle-y z-n1 img-fluid" src="{{ asset('glory-html-website-template/images/pattern2.png') }}" alt="img">
+    <img class="position-absolute top-50 start-0 translate-middle-y z-n1 img-fluid" src="images/pattern2.png" alt="img">
   </section>
 
   <section id="facilities" class="position-relative padding-medium">
@@ -414,7 +441,7 @@
       <div class="row g-3 mt-3 mt-lg-0">
         <div class="col-md-6 text-center">
           <div class="product-item position-relative bg-black overflow-hidden">
-            <img src="{{ asset('glory-html-website-template/images/facility1.jpg') }}" class="post-image img-fluid"  alt="img">
+            <img src="images/facility1.jpg" class="post-image img-fluid"  alt="img">
             <div class="product-description position-absolute top-50 start-50 translate-middle p-3">
               <h3 class="mb-2 display-6 text-white">Cafeteria</h3>
               <p class="product-paragraph d-none d-lg-block m-0 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -427,7 +454,7 @@
         </div>
         <div class="col-md-6 text-center">
           <div class="product-item position-relative bg-black overflow-hidden">
-            <img src="{{ asset('glory-html-website-template/images/facility2.jpg') }}" class="post-image img-fluid"  alt="img">
+            <img src="images/facility2.jpg" class="post-image img-fluid"  alt="img">
             <div class="product-description position-absolute top-50 start-50 translate-middle p-3">
               <h3 class="mb-2 display-6 text-white">Classes</h3>
               <p class="product-paragraph d-none d-lg-block m-0 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -440,7 +467,7 @@
         </div>
         <div class="col-md-6 text-center">
           <div class="product-item position-relative bg-black overflow-hidden">
-            <img src="{{ asset('glory-html-website-template/images/facility3.jpg') }}" class="post-image img-fluid"  alt="img">
+            <img src="images/facility3.jpg" class="post-image img-fluid"  alt="img">
             <div class="product-description position-absolute top-50 start-50 translate-middle p-3">
               <h3 class="mb-2 display-6 text-white">Environment</h3>
               <p class="product-paragraph d-none d-lg-block m-0 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -453,7 +480,7 @@
         </div>
         <div class="col-md-6 text-center">
           <div class="product-item position-relative bg-black overflow-hidden">
-            <img src="{{ asset('glory-html-website-template/images/facility4.jpg') }}" class="post-image img-fluid"  alt="img">
+            <img src="images/facility4.jpg" class="post-image img-fluid"  alt="img">
             <div class="product-description position-absolute top-50 start-50 translate-middle p-3">
               <h3 class="mb-2 display-6 text-white">Library</h3>
               <p class="product-paragraph d-none d-lg-block m-0 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -641,7 +668,7 @@
         </div>
       </div>
     </div>
-    <img class="position-absolute top-50 end-0 translate-middle-y z-n1 img-fluid" src="{{ asset('glory-html-website-template/images/pattern3.png') }}" alt="img">
+    <img class="position-absolute top-50 end-0 translate-middle-y z-n1 img-fluid" src="images/pattern3.png" alt="img">
 
   </section>
 
@@ -651,20 +678,20 @@
         <div class="section-title">
           <h2 class="display-5 text-center fw-semibold">News & Events</h2>
         </div>
-        <a href="#blogs" class="btn btn-primary mt-md-3 ">Lihat Semua Berita</a>
+        <a href="blog.html" class="btn btn-primary mt-md-3 ">View all news</a>
       </div>
       <div class="post-grid row mt-5">
         <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
           <div class="card-item">
             <div class="card border-0 bg-transparent">
               <div class="card-image position-relative">
-                <img src="{{ asset('glory-html-website-template/images/blog1.jpg') }}" alt="post-img" class="post-image img-fluid">
+                <img src="images/blog1.jpg" alt="post-img" class="post-image img-fluid">
               </div>
             </div>
             <div class="card-body p-0 mt-2">
               <span class="text-capitalize text-black-50">news - Jan 30, 2024</span>
               <h5 class="mt-2">
-                <a href="#blogs">Bachelor of Information Technology Major in Cyber Security</a>
+                <a href="blog-single.html">Bachelor of Information Technology Major in Cyber Security</a>
               </h5>
             </div>
           </div>
@@ -673,13 +700,13 @@
           <div class="card-item">
             <div class="card border-0 bg-transparent">
               <div class="card-image position-relative">
-                <img src="{{ asset('glory-html-website-template/images/blog2.jpg') }}" alt="post-img" class="post-image img-fluid">
+                <img src="images/blog2.jpg" alt="post-img" class="post-image img-fluid">
               </div>
             </div>
             <div class="card-body p-0 mt-2">
               <span class="text-capitalize text-black-50">news - Jan 30, 2024</span>
               <h5 class="mt-2">
-                <a href="#blogs">Bachelor of Information Technology Major in Cyber Security</a>
+                <a href="blog-single.html">Bachelor of Information Technology Major in Cyber Security</a>
               </h5>
             </div>
           </div>
@@ -688,20 +715,20 @@
           <div class="card-item">
             <div class="card border-0 bg-transparent">
               <div class="card-image position-relative">
-                <img src="{{ asset('glory-html-website-template/images/blog3.jpg') }}" alt="post-img" class="post-image img-fluid">
+                <img src="images/blog3.jpg" alt="post-img" class="post-image img-fluid">
               </div>
             </div>
             <div class="card-body p-0 mt-2">
               <span class="text-capitalize text-black-50">news - Jan 30, 2024</span>
               <h5 class="mt-2">
-                <a href="#blogs">Bachelor of Information Technology Major in Cyber Security</a>
+                <a href="blog-single.html">Bachelor of Information Technology Major in Cyber Security</a>
               </h5>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <img class="position-absolute bottom-0 start-0 z-n1 img-fluid" src="{{ asset('glory-html-website-template/images/pattern4.png') }}" alt="img">
+    <img class="position-absolute bottom-0 start-0 z-n1 img-fluid" src="images/pattern4.png" alt="img">
   </section>
 
   <section id="subscribe" class="bg-background padding-medium">
@@ -734,14 +761,28 @@
       <div class="row flex-wrap justify-content-between">
         <div class="col-lg-6 col-md-6 col-sm-6 pb-3 mb-4">
           <div class="footer-menu">
-            <a class="navbar-brand" href="{{ route('home') }}">
-              <img src="{{ asset('glory-html-website-template/images/footer-logo.png') }}" class="logo img-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/footer-logo.png" class="logo img-fluid">
             </a>
             <ul class="social-links d-flex flex-wrap list-unstyled m-0 mt-5">
               <li class="social me-3">
                 <a href="#">
                   <svg class="text-white me-1" width="26" height="26">
                     <use xlink:href="#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social me-3">
+                <a href="#">
+                  <svg class="text-white me-1" width="26" height="26">
+                    <use xlink:href="#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social me-3">
+                <a href="#">
+                  <svg class="text-white me-1" width="26" height="26">
+                    <use xlink:href="#linkedin"></use>
                   </svg>
                 </a>
               </li>
@@ -767,51 +808,57 @@
             <h5 class="text-white widget-title pb-2 fw-semibold">Quick Links</h5>
             <ul class="menu-list d-flex flex-column list-unstyled">
               <li class="pb-2 text-white">
-                <a href="{{ route('home') }}" class="fw-light">Home</a>
+                <a href="#" class="fw-light">Home</a>
               </li>
               <li class="pb-2 text-white">
-                <a href="#about" class="fw-light">About</a>
+                <a href="#" class="fw-light">About</a>
               </li>
               <li class="pb-2 text-white">
-                <a href="#courses" class="fw-light">Program Keahlian</a>
+                <a href="#" class="fw-light">Services</a>
               </li>
               <li class="pb-2 text-white">
-                <a href="#blogs" class="fw-light">Berita</a>
+                <a href="#" class="fw-light">Offers</a>
               </li>
               <li class="pb-2 text-white">
-                <a href="#footer" class="fw-light">Kontak</a>
+                <a href="#" class="fw-light">Contact</a>
               </li>
             </ul>
           </div>
         </div>
         <div class="col-lg-2 col-md-6 col-sm-6  pb-3">
           <div class="footer-menu">
-            <h5 class="text-white widget-title pb-2 fw-semibold">Program</h5>
+            <h5 class="text-white widget-title pb-2 fw-semibold">About</h5>
             <ul class="menu-list d-flex flex-column list-unstyled">
               <li class="pb-2 text-white">
-                <a href="#courses" class="fw-light">Teknik Komputer</a>
+                <a href="#" class="fw-light">How It Work</a>
               </li>
               <li class="pb-2 text-white">
-                <a href="#courses" class="fw-light">Akuntansi</a>
+                <a href="#" class="fw-light">Pricing</a>
               </li>
               <li class="pb-2 text-white">
-                <a href="#courses" class="fw-light">Bisnis Digital</a>
+                <a href="#" class="fw-light">Promotion</a>
+              </li>
+              <li class="pb-2 text-white">
+                <a href="#" class="fw-light">Refer a Friends</a>
               </li>
             </ul>
           </div>
         </div>
         <div class="col-lg-2 col-md-6 col-sm-6 pb-3">
           <div class="footer-menu">
-            <h6 class="text-white widget-title pb-2 fw-semibold">Kontak</h6>
+            <h6 class="text-white widget-title pb-2 fw-semibold">Help Center</h6>
             <ul class="menu-list d-flex flex-column list-unstyled">
               <li class="pb-2 text-white">
-                <a href="#" class="fw-light">{{ $profile->address ?? 'Jl. Contoh No. 123' }}</a>
+                <a href="#" class="fw-light">FAQs</a>
               </li>
               <li class="pb-2 text-white">
-                <a href="#" class="fw-light">Telp: {{ $profile->phone ?? '(021) 123456' }}</a>
+                <a href="#" class="fw-light">Get in touch</a>
               </li>
               <li class="pb-2 text-white">
-                <a href="#" class="fw-light">Email: {{ $profile->email ?? 'info@smkn11.sch.id' }}</a>
+                <a href="#" class="fw-light">Info</a>
+              </li>
+              <li class="pb-2 text-white">
+                <a href="#" class="fw-light">Payments</a>
               </li>
             </ul>
           </div>
@@ -821,8 +868,9 @@
     <hr class="text-white">
     <div class="container">
       <div class="footer-bottom d-md-flex justify-content-between py-4">
-        <p class="text-white mb-0">&copy; {{ date('Y') }} SMKN 11 - All rights reserved</p>
-        <p class="text-white mb-0">Powered by: <a href="#" class="text-decoration-underline fw-semibold">SMKN 11</a></p>
+        <p class="text-white mb-0">© 2024 Glory - All rights reserved</p>
+        <p class="text-white mb-0">Free HTML Templates by: <a href="https://templatesjungle.com/" target="_blank"
+            class="text-decoration-underline fw-semibold "> TemplatesJungle</a></p>
       </div>
     </div>
   </footer>
@@ -850,11 +898,11 @@
     </div>
   </div>
 
-  <script src="{{ asset('glory-html-website-template/js/jquery-1.11.0.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('glory-html-website-template/js/bootstrap.bundle.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('glory-html-website-template/js/plugins.js') }}"></script>
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="js/plugins.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script type="text/javascript" src="{{ asset('glory-html-website-template/js/script.js') }}"></script>
+  <script type="text/javascript" src="js/script.js"></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>
 

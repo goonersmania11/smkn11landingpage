@@ -11,7 +11,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Demo: Dashboard - Analytics | Sneat - Bootstrap Dashboard FREE</title>
+    <title>Admin Dashboard - SMKN 11</title>
 
     <meta name="description" content="" />
 
@@ -60,7 +60,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+            <a href="{{ route('admin.dashboard') }}" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <span class="text-primary">
                   <svg
@@ -112,7 +112,7 @@
                   </svg>
                 </span>
               </span>
-              <span class="app-brand-text demo menu-text fw-bold ms-2">Sneat</span>
+              <span class="app-brand-text demo menu-text fw-bold ms-2">SMKN 11</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -130,51 +130,22 @@
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-home-smile"></i>
                 <div class="text-truncate" data-i18n="Dashboards">Dashboards</div>
-                <span class="badge rounded-pill bg-danger ms-auto">5</span>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item active">
-                  <a href="index.html" class="menu-link">
-                    <div class="text-truncate" data-i18n="Analytics">Analytics</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/dashboards-crm.html"
-                    target="_blank"
-                    class="menu-link">
-                    <div class="text-truncate" data-i18n="CRM">CRM</div>
-                    <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-ecommerce-dashboard.html"
-                    target="_blank"
-                    class="menu-link">
-                    <div class="text-truncate" data-i18n="eCommerce">eCommerce</div>
-                    <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-logistics-dashboard.html"
-                    target="_blank"
-                    class="menu-link">
-                    <div class="text-truncate" data-i18n="Logistics">Logistics</div>
-                    <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-academy-dashboard.html"
-                    target="_blank"
-                    class="menu-link">
-                    <div class="text-truncate" data-i18n="Academy">Academy</div>
-                    <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
+                  <a href="{{ route('admin.dashboard') }}" class="menu-link">
+                    <div class="text-truncate" data-i18n="Dashboard">Dashboard</div>
                   </a>
                 </li>
               </ul>
+            </li>
+
+            <!-- Profil Sekolah -->
+            <li class="menu-item">
+              <a href="{{ route('admin.profiles.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div class="text-truncate" data-i18n="Profil Sekolah">Profil Sekolah</div>
+              </a>
             </li>
 
             <!-- Layouts -->
@@ -268,34 +239,28 @@
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Apps &amp; Pages</span>
             </li>
-            <li class="menu-item">
+            <li class="menu-item{{ request()->routeIs('jurusan.*') ? ' active' : '' }}">
               <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
-                target="_blank"
+                href="{{ route('jurusan.index') }}"
                 class="menu-link">
-                <i class="menu-icon tf-icons bx bx-envelope"></i>
-                <div class="text-truncate" data-i18n="Email">Email</div>
-                <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
+                <i class="menu-icon tf-icons bx bx-book"></i>
+                <div class="text-truncate" data-i18n="Jurusan">Jurusan</div>
               </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item{{ request()->routeIs('guru.*') ? ' active' : '' }}">
               <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-chat.html"
-                target="_blank"
+                href="{{ route('guru.index') }}"
                 class="menu-link">
-                <i class="menu-icon tf-icons bx bx-chat"></i>
-                <div class="text-truncate" data-i18n="Chat">Chat</div>
-                <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div class="text-truncate" data-i18n="Guru">Guru</div>
               </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item{{ request()->routeIs('ekstrakurikuler.*') ? ' active' : '' }}">
               <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-calendar.html"
-                target="_blank"
+                href="{{ route('ekstrakurikuler.index') }}"
                 class="menu-link">
-                <i class="menu-icon tf-icons bx bx-calendar"></i>
-                <div class="text-truncate" data-i18n="Calendar">Calendar</div>
-                <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
+                <i class="menu-icon tf-icons bx bx-medal"></i>
+                <div class="text-truncate" data-i18n="Ekstrakurikuler">Ekstrakurikuler</div>
               </a>
             </li>
             <li class="menu-item">
@@ -667,7 +632,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <h6 class="mb-0">John Doe</h6>
+                            <h6 class="mb-0">{{ Auth::user()->name }}</h6>
                             <small class="text-body-secondary">Admin</small>
                           </div>
                         </div>
@@ -699,9 +664,12 @@
                       <div class="dropdown-divider my-1"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="javascript:void(0);">
-                        <i class="icon-base bx bx-power-off icon-md me-3"></i><span>Log Out</span>
-                      </a>
+                      <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                          <i class="icon-base bx bx-power-off icon-md me-3"></i><span>Log Out</span>
+                        </a>
+                      </form>
                     </li>
                   </ul>
                 </li>
