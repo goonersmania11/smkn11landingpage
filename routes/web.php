@@ -3,6 +3,16 @@
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\JurusanController;
+use App\Http\Controllers\Admin\GuruController;
+use App\Http\Controllers\Admin\EkstrakurikulerController;
+Route::get('/', function () {
+    return view('welcome');
+});
+//route master-data
+Route::resource('jurusan', JurusanController::class);
+Route::resource('guru', GuruController::class);
+Route::resource('ekstrakurikuler', EkstrakurikulerController::class);
 
 use App\Models\Profile;
 
@@ -39,3 +49,4 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 
 // Memuat rute untuk Login, Register, Logout, dll (sekarang file ini sudah ada)
 require __DIR__.'/auth.php';
+
